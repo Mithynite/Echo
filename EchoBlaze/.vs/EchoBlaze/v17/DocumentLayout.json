@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\verti\\source\\repos\\EchoBlaze\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6559AA4B-EA51-42CD-9093-085C96537EBB}|EchoBlaze\\EchoBlaze.csproj|c:\\users\\verti\\source\\repos\\echoblaze\\echoblaze\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6559AA4B-EA51-42CD-9093-085C96537EBB}|EchoBlaze\\EchoBlaze.csproj|solutionrelative:echoblaze\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\verti\\source\\repos\\EchoBlaze\\EchoBlaze\\Components\\App.razor",
+              "RelativeDocumentMoniker": "EchoBlaze\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\verti\\source\\repos\\EchoBlaze\\EchoBlaze\\Components\\App.razor",
+              "RelativeToolTip": "EchoBlaze\\Components\\App.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-06T16:14:17.941Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

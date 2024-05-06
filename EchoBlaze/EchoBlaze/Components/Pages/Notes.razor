@@ -1,0 +1,9 @@
+﻿@page "/notes"
+@using EchoBlaze.Components.Layout
+<!--rendermode InteractiveServer-->
+
+<PageTitle>Notes</PageTitle>
+<div class="textarea-container">
+    <textarea @bind="Content" style="@($"font-size: {FontSize}rem")" placeholder="You can type here!" id="main-txtarea"></textarea>
+</div>
+

@@ -1,0 +1,49 @@
+body[b-rtumzv2r8w]{
+   
+}
+/* Text Area */
+.textarea-container[b-rtumzv2r8w] {
+    margin-top: 5%;
+    height: 88vh;
+    width: 100%;
+}
+.textarea-container textarea[b-rtumzv2r8w]::placeholder {
+    color:white;
+}
+.textarea-container textarea[b-rtumzv2r8w] {
+    padding: 10px;
+    color: white;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.textarea-container textarea[b-rtumzv2r8w]::-webkit-scrollbar {
+    width: 0.7em;
+    margin-right: 20px;
+    cursor:pointer;
+}
+
+.textarea-container textarea[b-rtumzv2r8w]::-webkit-scrollbar-thumb {
+    background-color: rgba(187, 187, 187, 0.36);
+    border-radius: 20px;
+    height: 5vh;
+}
+
+.textarea-container textarea[b-rtumzv2r8w]::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(150, 187, 187, 0.36);
+}
+
+@media (max-width: 1050px) {
+
+.textarea-container[b-rtumzv2r8w] {
+    margin-left: 15%;
+    height: 88vh;
+    width: 85%;
+}
+
+}
+

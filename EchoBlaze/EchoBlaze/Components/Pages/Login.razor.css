@@ -1,0 +1,299 @@
+﻿/* Popup cover */
+#popup-cover {
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 21, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+/* Colour mixer icon*/
+.color-mixer {
+    z-index: 3;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border: 3px solid #252525;
+    align-self: center;
+    right: 6%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.color-mixer:hover {
+    transform: scale(1.1);
+    border: 3px solid white;
+}
+
+/* The Colour mixer popup */
+.box {
+    position: absolute;
+    z-index: 5;
+    display: none;
+    width: 300px;
+    height: 360px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #252525;
+    border-radius: 17px;
+}
+
+.colors {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colors span{
+    width:100%;
+    height:40%;
+    display:flex;
+}
+
+.btn-close{
+    color: red;
+    background-color: red;
+    position: absolute;
+    align-self:end;
+    right:3%;
+    top:39%;
+}
+
+.display {
+    width: 100%;
+    height: 90%;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: 0.5s;
+}
+
+.rgb-slider {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sp {
+    margin-bottom: 10px;
+}
+
+.sp-a {
+    color: #ff0000;
+}
+.sp-b {
+    color: #00ff00;
+}
+.sp-c {
+    color: cornflowerblue;
+}
+
+input[type="range"] {
+    margin-bottom:10%;
+    width:200px;
+}
+
+/* Popup Container */
+.popup-container {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: rgba(255,255,255,0.2);
+    padding: 2vw;
+    border-radius: 20px;
+    width: 50vw;
+    height: 60vh;
+    min-height: 300px;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3%;
+}
+.popup-container .tittle{
+    display:flex;
+    width:32%;
+    justify-content:center;
+    gap:5%;
+}
+
+.popup-container .tittle h1{
+    font-size: 3.2rem;
+}
+
+.popup-container .tittle span{
+    margin-top:1.6%;
+    font-size: 3.3rem;
+}
+
+/* Popup Itself */
+.popup {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+    gap:5%;
+}
+
+.popup h4{
+    margin-top:4%;
+    text-align:start;
+}
+
+/* Popup input */
+.popup-input-container {
+    position: relative;
+    width: 100%;
+    min-width: 200px;
+    --accent-color: cyan;
+}
+
+.popup-input-container:before {
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.popup-input-container:before,
+.popup-input-container:after {
+    content: "";
+    left: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+    bottom: -1px;
+    z-index: 4;
+    width: 100%;
+}
+
+.popup-input-container:focus-within:before {
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.popup-input-container:before {
+    transition: border-bottom-color 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.42);
+}
+
+.popup-input-container:focus-within:before {
+    border-bottom: 2.5px solid var(--accent-color);
+    transform: scaleX(1);
+}
+
+.popup-input-container:focus-within:after {
+    border-bottom: 2px solid var(--accent-color);
+    transform: scaleX(1);
+}
+
+.popup-input-container:after {
+    content: "";
+    transform: scaleX(0);
+    transition: transform 500ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    will-change: transform;
+    border-bottom: 2px solid var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.popup-input-container::placeholder {
+    transition: opacity 500ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    opacity: 1;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.582);
+}
+
+.popup-input-container .popup-input {
+    border-radius: 6px 6px 0px 0px;
+    box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+    max-height: 50px;
+    background-color: #252525;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 1000ms;
+    transition-property: background-color;
+    color: #e8e8e8;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 12px;
+    width: 100%;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+.popup-input-container .popup-input:focus,
+.popup-input-container .popup-input:active {
+    outline: none;
+}
+
+.popup-input-container:focus-within .popup-input,
+.popup-input-container .popup-input:focus,
+.popup-input-container .popup-input:active {
+    background-color: #353535;
+}
+
+.popup-input-container:focus-within .popup-input::placeholder {
+    opacity: 0;
+}
+      
+/* Popup Button */
+.popup-button {
+    color: rgba(255, 255, 255, 0.582);
+    border: none;
+    background-color: #252525;
+    text-align: center;
+    font-size: 2.1rem;
+    cursor: pointer;
+    height: 10vh;
+    width: 100%;
+    min-height:45px;
+    margin-top: 2%;
+}
+
+.popup-button:hover {
+    transition: 0.2s;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    color: white;
+    font-size: 2.7rem;
+    border-radius: 9px;
+    text-decoration: none;
+}
+
+.popup-button label {
+    cursor:pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .popup-container .tittle h1 {
+        font-size: 2.1rem;
+    }
+
+    .popup-container .tittle span {
+        font-size: 2rem;
+    }
+
+    .popup-input-container .popup-input {
+        font-size: 1.1rem;
+    }
+
+    .popup-button {
+        font-size: 1.2rem;
+    }
+
+    .popup-button:hover {
+        font-size: 1.8rem;
+    }
+
+    .popup h4{
+        font-size:1rem;
+        margin-left:2%
+    }
+}

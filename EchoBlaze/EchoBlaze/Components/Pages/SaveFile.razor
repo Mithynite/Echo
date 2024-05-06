@@ -1,0 +1,35 @@
+﻿@page "/savefile"
+@inject IJSRuntime JSRuntime
+<!--rendermode InteractiveServer-->
+
+<PageTitle>Save the File</PageTitle>
+
+<div class="download-container">
+	<div class="file-name-container">
+		<input @bind="FileName" placeholder="Enter file name" type="text" class="file-name-input">
+	</div>
+	<button class="save-file" @onclick="Download">
+		<span>Save as txt file</span>
+	</button>
+	<br/>
+	<label class="content-from-notes">@Content</label>
+</div>
+
+<script>
+
+	/* Function used to download the document as .txt file */
+	window.downloadFile = function (filename, content) {
+		const blob = new Blob([content], { type: "text/plain" }); // Creates an object from content and the required type  
+		const url = window.URL.createObjectURL(blob); // Creates URL for the blob object
+
+		const a = document.createElement("a"); // Creates new Anchor element
+		a.href = url;
+		a.download = filename;
+		document.body.appendChild(a); // Joins the Anchor element to the document body and adds click event
+		a.click(); // Triggers click event --> Downloading
+		document.body.removeChild(a); // Get rid of the element
+		window.URL.revokeObjectURL(url); 
+	};
+
+</script>
+

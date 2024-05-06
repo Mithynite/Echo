@@ -1,0 +1,65 @@
+/* CSS of page in general */
+.page[b-so6blwq28d] {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row; /*collumn*/
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+    margin:0;
+    padding:0;
+}
+main[b-so6blwq28d] {
+    flex: 1;
+}
+
+@media (max-width: 640.98px) {
+    .top-row[b-so6blwq28d] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-so6blwq28d]  a, .top-row[b-so6blwq28d]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-so6blwq28d] {
+        flex-direction: column;
+    }
+
+    .top-row[b-so6blwq28d] {
+        position: relative;
+        top: 0;
+    }
+    .top-row[b-so6blwq28d], article[b-so6blwq28d] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+@media (max-width: 1050px) {
+    .page[b-so6blwq28d] {
+        overflow-y: auto;
+    }
+}
+
+#blazor-error-ui[b-so6blwq28d] {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss[b-so6blwq28d] {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }

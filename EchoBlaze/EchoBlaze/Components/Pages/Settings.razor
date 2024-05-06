@@ -1,0 +1,107 @@
+﻿@page "/settings"
+<!--Important for interacting and imidiate response!!!-->
+@rendermode InteractiveServer 
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Settings</PageTitle>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<div class="global-container">
+<h1>Settings</h1>
+<div class="top-part">
+<div class="font-change-container bubble">
+	<h3>Text font size</h3>
+        <div class="button-contatiner">
+            <button class="inc-button change-button" @onclick="IncrementCount">
+                <span class="material-symbols-outlined">
+                    expand_less
+                </span>
+                </button>
+            <button class="dec-button change-button" @onclick="DecrementCount">
+                <span class="material-symbols-outlined">
+                    expand_more
+                </span>
+            </button>
+            </div>
+    <label role="status">Current size: @FontSize</label>
+</div>
+        </div>
+    <div class="bottom-part" @oninput="UpdateRadioButtonSelection"> <!--ATTENTION-->
+        <div class="background-color-container bubble" @onclick="ReloadPage">
+        <h2>Background color</h2>
+            <div class="radio-item">
+                <input type="radio" name="radio-bg" id="radio1" class="avg" @onclick="@(e => SaveValue('1'))">
+                <label class="average-orange-grad" style="background: @AverageOrange"  for="radio1">Average Orange</label>
+        </div>
+        <div class="radio-item">
+                <input type="radio" name="radio-bg" id="radio2" class="lag" @onclick="@(e => SaveValue('2'))">
+                <label class="lagoon-gradient" style="background: @Lagoon" for="radio2">Lagoon</label>
+        </div>
+        <div class="radio-item">
+                <input type="radio" name="radio-bg" id="radio3" class="mid" @onclick="@(e => SaveValue('3'))">
+                <label class="midnight-grad" style="background: @Midnight" for="radio3">Midnight</label>
+        </div>
+        <div class="radio-item">
+                <input type="radio" name="radio-bg" id="radio4" class="def" @onclick="@(e => SaveValue('4'))">
+                <label class="default-grad" style="background: @Default" for="radio4">Default</label>
+        </div>
+    </div>
+        <div class="menu-color-container bubble" @onclick="ReloadPage">
+                <h2>Menu color</h2>
+            <div class="radio-item">
+                <input type="radio" name="radio-menu" id="radio5" class="dar" @onclick="@(e => SaveValue('5'))">
+                <label class="dark" style="background: @Dark" for="radio5">Dark</label>
+            </div>
+            <div class="radio-item">
+                <input type="radio" name="radio-menu" id="radio6" class="cya" @onclick="@(e => SaveValue('6'))">
+                <label class="cyan" style="background: @Cyan" for="radio6">Cyan</label>
+            </div>
+            <div class="radio-item">
+                <input type="radio" name="radio-menu" id="radio7" class="gol" @onclick="@(e => SaveValue('7'))">
+                <label class="gold" style="background: @Gold" for="radio7">Gold</label>
+            </div>
+            <div class="radio-item">
+                <input type="radio" name="radio-menu" id="radio8" class="tra" @onclick="@(e => SaveValue('8'))">
+                <label class="transparent" style="background: @Transparent" for="radio8">Transparent</label>
+            </div>
+        </div>
+        </div>
+</div>
+
+<script>
+
+   /* Checking radio buttons */
+   window.interopFunctions = {
+     getSelectedRadioButtonID: function (radioButtonGroupName) {
+     var rbutton = document.querySelector('input[name="' + radioButtonGroupName + '"]:checked'); // stores checked radiobutton
+     if (rbutton) {
+                return rbutton.className; // returns class name of the radio button to handle it in C# "UpdateRadioButtonSelection()" method
+            }
+     return null;
+     }
+   };
+
+   /* Saving of Background/Menu background color values to Local Storage */
+    window.saveValue = function (option) {
+        console.log("option: " + option);
+        if (option >= 1 && option <= 4) {
+            localStorage.setItem('backgroundOption', option);
+        } else {
+            localStorage.setItem('menuBackgroundOption', option);
+        }
+    }
+
+    /* Loading Background/Menu background color values from the Local Storage */
+    window.loadValue = function () {
+        var selectedBackgroundOption = localStorage.getItem('backgroundOption');
+        var selectedMenuBackgroundOption = localStorage.getItem('menuBackgroundOption');
+        if (selectedBackgroundOption)
+            document.querySelector('input[id = radio' + selectedBackgroundOption + ']').checked = true; 
+        if (selectedMenuBackgroundOption)
+            document.querySelector('input[id = radio' + selectedMenuBackgroundOption + ']').checked = true;
+    }
+
+    /* Reload the page when you click on radio button area */
+    window.reloadPage = function () {
+        location.reload();
+    }
+ </script>
